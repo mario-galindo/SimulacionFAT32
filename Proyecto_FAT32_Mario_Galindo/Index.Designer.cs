@@ -43,7 +43,9 @@
             this.btnFile = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lbMostarEspacio = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.ProgresbarEspacio = new System.Windows.Forms.ProgressBar();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbPorcentaje = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -212,7 +215,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.progressBar1);
+            this.groupBox1.Controls.Add(this.lbPorcentaje);
+            this.groupBox1.Controls.Add(this.lbMostarEspacio);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.ProgresbarEspacio);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
@@ -229,12 +235,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
             // 
-            // progressBar1
+            // lbMostarEspacio
             // 
-            this.progressBar1.Location = new System.Drawing.Point(120, 185);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(238, 23);
-            this.progressBar1.TabIndex = 9;
+            this.lbMostarEspacio.AutoSize = true;
+            this.lbMostarEspacio.Location = new System.Drawing.Point(105, 142);
+            this.lbMostarEspacio.Name = "lbMostarEspacio";
+            this.lbMostarEspacio.Size = new System.Drawing.Size(0, 13);
+            this.lbMostarEspacio.TabIndex = 11;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(24, 142);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Total Espacio:";
+            // 
+            // ProgresbarEspacio
+            // 
+            this.ProgresbarEspacio.Location = new System.Drawing.Point(120, 185);
+            this.ProgresbarEspacio.Name = "ProgresbarEspacio";
+            this.ProgresbarEspacio.Size = new System.Drawing.Size(238, 23);
+            this.ProgresbarEspacio.TabIndex = 9;
             // 
             // label9
             // 
@@ -323,6 +346,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo: Disco local";
             // 
+            // lbPorcentaje
+            // 
+            this.lbPorcentaje.AutoSize = true;
+            this.lbPorcentaje.Location = new System.Drawing.Point(364, 191);
+            this.lbPorcentaje.Name = "lbPorcentaje";
+            this.lbPorcentaje.Size = new System.Drawing.Size(41, 13);
+            this.lbPorcentaje.TabIndex = 12;
+            this.lbPorcentaje.Text = "label13";
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +400,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar ProgresbarEspacio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAdd;
@@ -379,6 +411,9 @@
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TreeView trvDirectorio;
         public System.Windows.Forms.TextBox txt1;
+        private System.Windows.Forms.Label lbMostarEspacio;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbPorcentaje;
     }
 }
 
