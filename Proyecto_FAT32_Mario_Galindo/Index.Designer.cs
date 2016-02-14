@@ -43,6 +43,7 @@
             this.btnFile = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbPorcentaje = new System.Windows.Forms.Label();
             this.lbMostarEspacio = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.ProgresbarEspacio = new System.Windows.Forms.ProgressBar();
@@ -55,7 +56,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbPorcentaje = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -93,14 +93,14 @@
             // crearArchivoToolStripMenuItem
             // 
             this.crearArchivoToolStripMenuItem.Name = "crearArchivoToolStripMenuItem";
-            this.crearArchivoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.crearArchivoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.crearArchivoToolStripMenuItem.Text = "Crear Disco";
             this.crearArchivoToolStripMenuItem.Click += new System.EventHandler(this.crearArchivoToolStripMenuItem_Click);
             // 
             // crearArchivoToolStripMenuItem1
             // 
             this.crearArchivoToolStripMenuItem1.Name = "crearArchivoToolStripMenuItem1";
-            this.crearArchivoToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
+            this.crearArchivoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.crearArchivoToolStripMenuItem1.Text = "Crear Archivo";
             this.crearArchivoToolStripMenuItem1.Click += new System.EventHandler(this.crearArchivoToolStripMenuItem1_Click);
             // 
@@ -235,6 +235,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
             // 
+            // lbPorcentaje
+            // 
+            this.lbPorcentaje.AutoSize = true;
+            this.lbPorcentaje.Location = new System.Drawing.Point(364, 191);
+            this.lbPorcentaje.Name = "lbPorcentaje";
+            this.lbPorcentaje.Size = new System.Drawing.Size(0, 13);
+            this.lbPorcentaje.TabIndex = 12;
+            // 
             // lbMostarEspacio
             // 
             this.lbMostarEspacio.AutoSize = true;
@@ -345,15 +353,6 @@
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo: Disco local";
-            // 
-            // lbPorcentaje
-            // 
-            this.lbPorcentaje.AutoSize = true;
-            this.lbPorcentaje.Location = new System.Drawing.Point(364, 191);
-            this.lbPorcentaje.Name = "lbPorcentaje";
-            this.lbPorcentaje.Size = new System.Drawing.Size(41, 13);
-            this.lbPorcentaje.TabIndex = 12;
-            this.lbPorcentaje.Text = "label13";
             // 
             // Index
             // 
