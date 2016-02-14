@@ -8,3 +8,4 @@ E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galind
 E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.pdb
 E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.Index.resources
 E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.modalArchivo.resources
+E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.modalDisco.resources

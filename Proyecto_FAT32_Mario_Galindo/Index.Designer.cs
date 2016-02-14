@@ -371,14 +371,14 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TreeView trvDirectorio;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.TextBox txtnodo;
         private System.Windows.Forms.TextBox txtarc;
-        private System.Windows.Forms.TextBox txt1;
         private System.Windows.Forms.Button btnFile;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TreeView trvDirectorio;
+        public System.Windows.Forms.TextBox txt1;
     }
 }
 

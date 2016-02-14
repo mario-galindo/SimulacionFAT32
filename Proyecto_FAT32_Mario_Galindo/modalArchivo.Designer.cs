@@ -59,6 +59,7 @@
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCrearArchivo
             // 
@@ -69,6 +70,7 @@
             this.btnCrearArchivo.TabIndex = 2;
             this.btnCrearArchivo.Text = "Crear";
             this.btnCrearArchivo.UseVisualStyleBackColor = true;
+            this.btnCrearArchivo.Click += new System.EventHandler(this.btnCrearArchivo_Click);
             // 
             // label1
             // 
@@ -87,13 +89,13 @@
             this.txtNombreArchivo.Size = new System.Drawing.Size(144, 20);
             this.txtNombreArchivo.TabIndex = 0;
             // 
-            // menuArchivo
+            // modalArchivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(304, 131);
             this.Controls.Add(this.groupBox1);
-            this.Name = "menuArchivo";
+            this.Name = "modalArchivo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nuevo Archivo";
             this.groupBox1.ResumeLayout(false);

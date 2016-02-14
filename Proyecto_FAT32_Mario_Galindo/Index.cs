@@ -21,9 +21,23 @@ namespace Proyecto_FAT32_Mario_Galindo
             InitializeComponent();
         }
 
+        //Variables
+        public string nombre_Disco;
+        public string tamano_Disco;
+
         private void crearArchivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            modalDisco mDisco = new modalDisco();
+            DialogResult dr = mDisco.ShowDialog();
 
+            nombre_Disco = mDisco.nombreDisco;
+            tamano_Disco = mDisco.tamanoDisco;
+
+            if (dr == DialogResult.OK)
+            {
+                trvDirectorio.Nodes.Add("💾 " + nombre_Disco);
+            }
+            
         }
 
         private void crearArchivoToolStripMenuItem1_Click(object sender, EventArgs e)
