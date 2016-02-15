@@ -9,3 +9,4 @@ E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galind
 E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.csproj.GenerateResource.Cache
 E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.exe
 E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.pdb
+E:\Clases IV año CEUTEC 2016\Estructura de datos II\Proyecto_FAT32_Mario_Galindo\Proyecto_FAT32_Mario_Galindo\obj\Debug\Proyecto_FAT32_Mario_Galindo.modalCarpeta.resources

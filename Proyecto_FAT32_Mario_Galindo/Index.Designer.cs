@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearArchivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearCarpetaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearArchivoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.trvDirectorio = new System.Windows.Forms.TreeView();
@@ -84,6 +85,7 @@
             // 
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearArchivoToolStripMenuItem,
+            this.crearCarpetaToolStripMenuItem,
             this.crearArchivoToolStripMenuItem1});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
@@ -96,6 +98,13 @@
             this.crearArchivoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.crearArchivoToolStripMenuItem.Text = "Crear Disco";
             this.crearArchivoToolStripMenuItem.Click += new System.EventHandler(this.crearArchivoToolStripMenuItem_Click);
+            // 
+            // crearCarpetaToolStripMenuItem
+            // 
+            this.crearCarpetaToolStripMenuItem.Name = "crearCarpetaToolStripMenuItem";
+            this.crearCarpetaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.crearCarpetaToolStripMenuItem.Text = "Crear Carpeta";
+            this.crearCarpetaToolStripMenuItem.Click += new System.EventHandler(this.crearCarpetaToolStripMenuItem_Click);
             // 
             // crearArchivoToolStripMenuItem1
             // 
@@ -413,6 +422,7 @@
         private System.Windows.Forms.Label lbMostarEspacio;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbPorcentaje;
+        private System.Windows.Forms.ToolStripMenuItem crearCarpetaToolStripMenuItem;
     }
 }
 

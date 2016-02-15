@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Proyecto_FAT32_Mario_Galindo
 {
@@ -19,6 +20,9 @@ namespace Proyecto_FAT32_Mario_Galindo
         public Index()
         {
             InitializeComponent();
+            crearArchivoToolStripMenuItem1.Enabled = false;
+            crearCarpetaToolStripMenuItem.Enabled = false;
+            
         }
 
         //Variables para recibir el nombre de la a unidad y el tamano
@@ -30,9 +34,15 @@ namespace Proyecto_FAT32_Mario_Galindo
         public double tamano_original;
         public double resultado_Bytes;
 
-        //Propiedades de la FAT
+        //Propiedades al inicio de la FAT
         public double Espacio_ocupado_FAT;
         public double Porcentaje_Ocupacion;
+
+        //Varibles para el Archivo
+        public string Archivo_Nombre;
+
+        //Varible para la carpeta
+        public string Carpeta_Nombre;
 
         private void crearArchivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -73,6 +83,15 @@ namespace Proyecto_FAT32_Mario_Galindo
 
                 //se muestra el total de espacio
                 lbMostarEspacio.Text = Convert.ToString(resultado_Bytes+" bytes");
+
+                //Deshabilitamos el boton de crear disco
+                crearArchivoToolStripMenuItem.Enabled = false;
+                
+                //Habilitamos el boton de crear Archivo
+                crearArchivoToolStripMenuItem1.Enabled = true;
+
+                //Habilitamos el boton de crear carpeta
+                crearCarpetaToolStripMenuItem.Enabled = true;
             }
             
         }
@@ -80,14 +99,23 @@ namespace Proyecto_FAT32_Mario_Galindo
         private void crearArchivoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             modalArchivo mArchivo = new modalArchivo();
-            DialogResult dr = new DialogResult();
-            dr = mArchivo.ShowDialog();
+            DialogResult dr = mArchivo.ShowDialog();
+
+            //Capturamos el nombre del Archivo
+            Archivo_Nombre = mArchivo.Nombre_Archivo;
+
+            if (dr == DialogResult.OK)
+            {
+                File.WriteAllText("c:/ArchivosFAT32/"+ nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt", " ");
+                trvDirectorio.SelectedNode.Nodes.Add("📰 " + Archivo_Nombre+".txt");
+            }
+          
 
          }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+              
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -128,6 +156,20 @@ namespace Proyecto_FAT32_Mario_Galindo
             
             
             
+        }
+
+        private void crearCarpetaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modalCarpeta dialogo = new modalCarpeta();
+            DialogResult dr = dialogo.ShowDialog();
+
+            Carpeta_Nombre = dialogo.nombreCarpeta;
+
+            if (dr == DialogResult.OK)
+            {
+                System.IO.Directory.CreateDirectory("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre);
+                trvDirectorio.SelectedNode.Nodes.Add("📂 "+Carpeta_Nombre);
+            }
         }
     }
 }

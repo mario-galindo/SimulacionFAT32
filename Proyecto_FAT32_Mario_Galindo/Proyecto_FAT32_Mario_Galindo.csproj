@@ -72,6 +72,12 @@
     <Compile Include="modalArchivo.Designer.cs">
       <DependentUpon>modalArchivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="modalCarpeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modalCarpeta.Designer.cs">
+      <DependentUpon>modalCarpeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="modalDisco.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modalArchivo.resx">
       <DependentUpon>modalArchivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modalCarpeta.resx">
+      <DependentUpon>modalCarpeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modalDisco.resx">
       <DependentUpon>modalDisco.cs</DependentUpon>

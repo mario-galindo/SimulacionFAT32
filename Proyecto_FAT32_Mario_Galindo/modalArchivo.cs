@@ -17,6 +17,9 @@ namespace Proyecto_FAT32_Mario_Galindo
             InitializeComponent();
         }
 
+        //Variables
+        public string Nombre_Archivo;
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -29,7 +32,7 @@ namespace Proyecto_FAT32_Mario_Galindo
 
         private void btnCrearArchivo_Click(object sender, EventArgs e)
         {
-
+            Nombre_Archivo = txtNombreArchivo.Text;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
