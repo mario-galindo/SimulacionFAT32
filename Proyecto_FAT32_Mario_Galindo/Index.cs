@@ -42,26 +42,29 @@ namespace Proyecto_FAT32_Mario_Galindo
             nombre_Disco = mDisco.nombreDisco;
             tamano_Disco = mDisco.tamanoDisco;
 
-            //Convertimos a tipo INT el tamano que nos viene del formulario
-            tamano_original = int.Parse(tamano_Disco);
-
-            //Lo Convertimos de GB A Equivalencia en Bytes
-            resultado_Bytes = tamano_original * GB_bytes;
-
-            //Calculos para sacar el espacio de la FAT
-            Espacio_ocupado_FAT = 0.2 * resultado_Bytes;
-            Porcentaje_Ocupacion = resultado_Bytes / Espacio_ocupado_FAT;
-
-            //Le asignamos el porcentaje Ocupado al Label
-            lbPorcentaje.Text = Convert.ToString(Porcentaje_Ocupacion + " %");
-
-            //Incrementamos la Progress Bar
-            ProgresbarEspacio.Increment(int.Parse(Convert.ToString(Porcentaje_Ocupacion)));
+            
 
 
 
             if (dr == DialogResult.OK)
             {
+
+                //Convertimos a tipo INT el tamano que nos viene del formulario
+                tamano_original = int.Parse(tamano_Disco);
+
+                //Lo Convertimos de GB A Equivalencia en Bytes
+                resultado_Bytes = tamano_original * GB_bytes;
+
+                //Calculos para sacar el espacio de la FAT
+                Espacio_ocupado_FAT = 0.2 * resultado_Bytes;
+                Porcentaje_Ocupacion = resultado_Bytes / Espacio_ocupado_FAT;
+
+                //Le asignamos el porcentaje Ocupado al Label
+                lbPorcentaje.Text = Convert.ToString(Porcentaje_Ocupacion + " %");
+
+                //Incrementamos la Progress Bar
+                ProgresbarEspacio.Increment(int.Parse(Convert.ToString(Porcentaje_Ocupacion)));
+
                 //Se agrega el nodo al arbol de directorio(treeview)
                 trvDirectorio.Nodes.Add("💾 " + nombre_Disco);
 
