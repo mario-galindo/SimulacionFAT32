@@ -52,10 +52,10 @@ namespace Proyecto_FAT32_Mario_Galindo
             nombre_Disco = mDisco.nombreDisco;
             tamano_Disco = mDisco.tamanoDisco;
 
+            //Creamos la Instancia de nuestra clase
+            Particion particion = new Particion();
+
             
-
-
-
             if (dr == DialogResult.OK)
             {
 
@@ -68,9 +68,18 @@ namespace Proyecto_FAT32_Mario_Galindo
                 //Calculos para sacar el espacio de la FAT
                 Espacio_ocupado_FAT = 0.2 * resultado_Bytes;
                 Porcentaje_Ocupacion = resultado_Bytes / Espacio_ocupado_FAT;
+                
 
                 //Le asignamos el porcentaje Ocupado al Label
                 lbPorcentaje.Text = Convert.ToString(Porcentaje_Ocupacion + " %");
+
+                //Usado
+                lbusado.Text = Convert.ToString(Espacio_ocupado_FAT);
+
+                //disponible
+                lbdisponible.Text = Convert.ToString(resultado_Bytes - Espacio_ocupado_FAT+" bytes");
+
+                lbtotalgb.Text = Convert.ToString((resultado_Bytes - Espacio_ocupado_FAT) / (1073741824)+" GB");
 
                 //Incrementamos la Progress Bar
                 ProgresbarEspacio.Increment(int.Parse(Convert.ToString(Porcentaje_Ocupacion)));
@@ -92,6 +101,9 @@ namespace Proyecto_FAT32_Mario_Galindo
 
                 //Habilitamos el boton de crear carpeta
                 crearCarpetaToolStripMenuItem.Enabled = true;
+
+                //Mandamos a llamar nuestra funcion que nos llene nuestra MBR
+                particion.insertarParticion(nombre_Disco, resultado_Bytes, Espacio_ocupado_FAT);
             }
             
         }

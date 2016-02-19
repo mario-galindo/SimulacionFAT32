@@ -84,6 +84,8 @@
     <Compile Include="modalDisco.Designer.cs">
       <DependentUpon>modalDisco.cs</DependentUpon>
     </Compile>
+    <Compile Include="operacionesDataBase.cs" />
+    <Compile Include="Particion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Index.resx">

@@ -57,6 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbusado = new System.Windows.Forms.Label();
+            this.lbdisponible = new System.Windows.Forms.Label();
+            this.lbtotalgb = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -224,6 +227,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbtotalgb);
+            this.groupBox1.Controls.Add(this.lbdisponible);
+            this.groupBox1.Controls.Add(this.lbusado);
             this.groupBox1.Controls.Add(this.lbPorcentaje);
             this.groupBox1.Controls.Add(this.lbMostarEspacio);
             this.groupBox1.Controls.Add(this.label12);
@@ -363,6 +369,31 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo: Disco local";
             // 
+            // lbusado
+            // 
+            this.lbusado.AutoSize = true;
+            this.lbusado.Location = new System.Drawing.Point(117, 96);
+            this.lbusado.Name = "lbusado";
+            this.lbusado.Size = new System.Drawing.Size(0, 13);
+            this.lbusado.TabIndex = 13;
+            // 
+            // lbdisponible
+            // 
+            this.lbdisponible.AutoSize = true;
+            this.lbdisponible.Location = new System.Drawing.Point(131, 121);
+            this.lbdisponible.Name = "lbdisponible";
+            this.lbdisponible.Size = new System.Drawing.Size(0, 13);
+            this.lbdisponible.TabIndex = 14;
+            // 
+            // lbtotalgb
+            // 
+            this.lbtotalgb.AutoSize = true;
+            this.lbtotalgb.Location = new System.Drawing.Point(579, 121);
+            this.lbtotalgb.Name = "lbtotalgb";
+            this.lbtotalgb.Size = new System.Drawing.Size(16, 13);
+            this.lbtotalgb.TabIndex = 15;
+            this.lbtotalgb.Text = "   ";
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +454,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbPorcentaje;
         private System.Windows.Forms.ToolStripMenuItem crearCarpetaToolStripMenuItem;
+        private System.Windows.Forms.Label lbusado;
+        private System.Windows.Forms.Label lbdisponible;
+        private System.Windows.Forms.Label lbtotalgb;
     }
 }
 
