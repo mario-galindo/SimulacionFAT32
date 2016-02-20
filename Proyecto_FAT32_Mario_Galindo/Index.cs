@@ -9,21 +9,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.IO.Compression;
 using System.Globalization;
 
 namespace Proyecto_FAT32_Mario_Galindo
 {
 
-    
+
     public partial class Index : Form
     {
-       
+
         public Index()
         {
             InitializeComponent();
             crearArchivoToolStripMenuItem1.Enabled = false;
             crearCarpetaToolStripMenuItem.Enabled = false;
-            
+
         }
 
         //Variables para recibir el nombre de la a unidad y el tamano
@@ -60,7 +61,7 @@ namespace Proyecto_FAT32_Mario_Galindo
             //Creamos la Instancia de nuestra clase
             Particion particion = new Particion();
 
-            
+
             if (dr == DialogResult.OK)
             {
 
@@ -73,7 +74,7 @@ namespace Proyecto_FAT32_Mario_Galindo
                 //Calculos para sacar el espacio de la FAT
                 Espacio_ocupado_FAT = 0.2 * resultado_Bytes;
                 Porcentaje_Ocupacion = resultado_Bytes / Espacio_ocupado_FAT;
-                
+
 
                 //Le asignamos el porcentaje Ocupado al Label
                 lbPorcentaje.Text = Convert.ToString(Porcentaje_Ocupacion + " %");
@@ -82,9 +83,9 @@ namespace Proyecto_FAT32_Mario_Galindo
                 lbusado.Text = Convert.ToString(Espacio_ocupado_FAT);
 
                 //disponible
-                lbdisponible.Text = Convert.ToString(resultado_Bytes - Espacio_ocupado_FAT+" bytes");
+                lbdisponible.Text = Convert.ToString(resultado_Bytes - Espacio_ocupado_FAT + " bytes");
 
-                lbtotalgb.Text = Convert.ToString((resultado_Bytes - Espacio_ocupado_FAT) / (1073741824)+" GB");
+                lbtotalgb.Text = Convert.ToString((resultado_Bytes - Espacio_ocupado_FAT) / (1073741824) + " GB");
 
                 //Incrementamos la Progress Bar
                 ProgresbarEspacio.Increment(int.Parse(Convert.ToString(Porcentaje_Ocupacion)));
@@ -93,14 +94,14 @@ namespace Proyecto_FAT32_Mario_Galindo
                 trvDirectorio.Nodes.Add(nombre_Disco);
 
                 //se manda a crear una carpeta fisica al disco local C para simular la unidad
-                System.IO.Directory.CreateDirectory("c:/ArchivosFAT32/"+nombre_Disco);
+                System.IO.Directory.CreateDirectory("c:/ArchivosFAT32/" + nombre_Disco);
 
                 //se muestra el total de espacio
-                lbMostarEspacio.Text = Convert.ToString(resultado_Bytes+" bytes");
+                lbMostarEspacio.Text = Convert.ToString(resultado_Bytes + " bytes");
 
                 //Deshabilitamos el boton de crear disco
                 crearArchivoToolStripMenuItem.Enabled = false;
-                
+
                 //Habilitamos el boton de crear Archivo
                 crearArchivoToolStripMenuItem1.Enabled = true;
 
@@ -110,7 +111,7 @@ namespace Proyecto_FAT32_Mario_Galindo
                 //Mandamos a llamar nuestra funcion que nos llene nuestra MBR
                 particion.insertarParticion(nombre_Disco, resultado_Bytes, Espacio_ocupado_FAT);
             }
-            
+
         }
 
         //Creacion del Archivo de Texto
@@ -121,31 +122,31 @@ namespace Proyecto_FAT32_Mario_Galindo
 
             //Capturamos el nombre del Archivo
             Archivo_Nombre = mArchivo.Nombre_Archivo;
-            
+
             //Creamos instancia de la clase archhivo que nos maneja los datos con la base de datos
             tablaArchivos tabla_FAT = new tablaArchivos();
 
             if (dr == DialogResult.OK)
             {
                 string rutaCreacion = trvDirectorio.SelectedNode.FullPath;
-                
+
                 //File.WriteAllText("c:/ArchivosFAT32/"+ nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt", " ");
                 File.WriteAllText("c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt", " ");
 
-                trvDirectorio.SelectedNode.Nodes.Add(Archivo_Nombre+".txt");
+                trvDirectorio.SelectedNode.Nodes.Add(Archivo_Nombre + ".txt");
 
                 //Obtengo la direccion donde se creo
                 string url = "c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt";
-                
+
 
                 //Obtener Informacion del archivo
                 //FileInfo file = new FileInfo("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt");
                 FileInfo file = new FileInfo("c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt");
-                
+
                 fechaCreacion = DateTime.Now;
                 string date = fechaCreacion.Date.ToString("yyyy-MM-dd");
 
-               
+
 
                 //Obtenemos el tamano del archivo Creado
                 tamano_ArchivoCreado = (int)file.Length;
@@ -153,27 +154,27 @@ namespace Proyecto_FAT32_Mario_Galindo
                 //Mandamos los datos del archivo a la File Allocation Table
                 tabla_FAT.actualizarFAT32(Archivo_Nombre, tamano_ArchivoCreado, date, url, nombre_Disco);
 
-                
-                
+
+
                 //Actualizamos el valor real en la Master Boot
                 long usadoActual = tabla_FAT.EspacionDisponible();
                 usadoActual = (usadoActual + 1);
 
-               
+
 
                 //Actualizamos la Tabla
                 tabla_FAT.actualizarUsado(usadoActual, nombre_Disco);
-                
-                
+
+
                 MessageBox.Show(rutaCreacion);
             }
-          
 
-         }
+
+        }
 
         private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-              
+
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -199,21 +200,22 @@ namespace Proyecto_FAT32_Mario_Galindo
         private void btnFile_Click(object sender, EventArgs e)
         {
             int indexItem;
-            foreach (TreeNode n in trvDirectorio.Nodes) {
+            foreach (TreeNode n in trvDirectorio.Nodes)
+            {
 
-                
+
                 if (n.Text.ToLower() == txtnodo.Text)
                 {
                     indexItem = n.Index;
                     trvDirectorio.Nodes[indexItem].Nodes.Add(txtarc.Text);
-                    
+
                 }
-            
+
             }
 
-            
-            
-            
+
+
+
         }
 
         private void crearCarpetaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -227,6 +229,53 @@ namespace Proyecto_FAT32_Mario_Galindo
             {
                 System.IO.Directory.CreateDirectory("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre);
                 trvDirectorio.SelectedNode.Nodes.Add(Carpeta_Nombre);
+            }
+        }
+        //Boton de Comprimir
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string dirpath = @"c:\ArchivosFAT32";
+
+            DirectoryInfo di = new DirectoryInfo(dirpath);
+
+            // Compress the directory's files.
+            foreach (FileInfo fi in di.GetFiles())
+            {
+                Compress(fi);
+
+            }
+
+
+        }
+
+        public static void Compress(FileInfo fi)
+        {
+            // Get the stream of the source file.
+            using (FileStream inFile = fi.OpenRead())
+            {
+                // Prevent compressing hidden and
+                // already compressed files.
+                if ((File.GetAttributes(fi.FullName)
+                    & FileAttributes.Hidden)
+                    != FileAttributes.Hidden & fi.Extension != ".rar")
+                {
+                    // Create the compressed file.
+                    using (FileStream outFile =
+                                File.Create(fi.FullName + ".rar"))
+                    {
+                        using (GZipStream Compress =
+                            new GZipStream(outFile,
+                            CompressionMode.Compress))
+                        {
+                            // Copy the source file into
+                            // the compression stream.
+                            inFile.CopyTo(Compress);
+
+                            MessageBox.Show("Terminado");
+                        }
+
+                    }
+                }
             }
         }
     }

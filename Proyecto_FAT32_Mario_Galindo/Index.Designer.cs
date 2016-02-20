@@ -44,6 +44,9 @@
             this.btnFile = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbtotalgb = new System.Windows.Forms.Label();
+            this.lbdisponible = new System.Windows.Forms.Label();
+            this.lbusado = new System.Windows.Forms.Label();
             this.lbPorcentaje = new System.Windows.Forms.Label();
             this.lbMostarEspacio = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -57,9 +60,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lbusado = new System.Windows.Forms.Label();
-            this.lbdisponible = new System.Windows.Forms.Label();
-            this.lbtotalgb = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -151,6 +152,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.button1);
             this.splitContainer2.Panel1.Controls.Add(this.label11);
             this.splitContainer2.Panel1.Controls.Add(this.label10);
             this.splitContainer2.Panel1.Controls.Add(this.txtnodo);
@@ -249,6 +251,31 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informacion General";
+            // 
+            // lbtotalgb
+            // 
+            this.lbtotalgb.AutoSize = true;
+            this.lbtotalgb.Location = new System.Drawing.Point(579, 121);
+            this.lbtotalgb.Name = "lbtotalgb";
+            this.lbtotalgb.Size = new System.Drawing.Size(16, 13);
+            this.lbtotalgb.TabIndex = 15;
+            this.lbtotalgb.Text = "   ";
+            // 
+            // lbdisponible
+            // 
+            this.lbdisponible.AutoSize = true;
+            this.lbdisponible.Location = new System.Drawing.Point(131, 121);
+            this.lbdisponible.Name = "lbdisponible";
+            this.lbdisponible.Size = new System.Drawing.Size(0, 13);
+            this.lbdisponible.TabIndex = 14;
+            // 
+            // lbusado
+            // 
+            this.lbusado.AutoSize = true;
+            this.lbusado.Location = new System.Drawing.Point(117, 96);
+            this.lbusado.Name = "lbusado";
+            this.lbusado.Size = new System.Drawing.Size(0, 13);
+            this.lbusado.TabIndex = 13;
             // 
             // lbPorcentaje
             // 
@@ -369,30 +396,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo: Disco local";
             // 
-            // lbusado
+            // button1
             // 
-            this.lbusado.AutoSize = true;
-            this.lbusado.Location = new System.Drawing.Point(117, 96);
-            this.lbusado.Name = "lbusado";
-            this.lbusado.Size = new System.Drawing.Size(0, 13);
-            this.lbusado.TabIndex = 13;
-            // 
-            // lbdisponible
-            // 
-            this.lbdisponible.AutoSize = true;
-            this.lbdisponible.Location = new System.Drawing.Point(131, 121);
-            this.lbdisponible.Name = "lbdisponible";
-            this.lbdisponible.Size = new System.Drawing.Size(0, 13);
-            this.lbdisponible.TabIndex = 14;
-            // 
-            // lbtotalgb
-            // 
-            this.lbtotalgb.AutoSize = true;
-            this.lbtotalgb.Location = new System.Drawing.Point(579, 121);
-            this.lbtotalgb.Name = "lbtotalgb";
-            this.lbtotalgb.Size = new System.Drawing.Size(16, 13);
-            this.lbtotalgb.TabIndex = 15;
-            this.lbtotalgb.Text = "   ";
+            this.button1.Location = new System.Drawing.Point(28, 123);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Comprimir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Index
             // 
@@ -457,6 +469,7 @@
         private System.Windows.Forms.Label lbusado;
         private System.Windows.Forms.Label lbdisponible;
         private System.Windows.Forms.Label lbtotalgb;
+        private System.Windows.Forms.Button button1;
     }
 }
 
