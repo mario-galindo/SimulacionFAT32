@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Globalization;
 
 namespace Proyecto_FAT32_Mario_Galindo
 {
@@ -89,7 +90,7 @@ namespace Proyecto_FAT32_Mario_Galindo
                 ProgresbarEspacio.Increment(int.Parse(Convert.ToString(Porcentaje_Ocupacion)));
 
                 //Se agrega el nodo al arbol de directorio(treeview)
-                trvDirectorio.Nodes.Add("💾 " + nombre_Disco);
+                trvDirectorio.Nodes.Add(nombre_Disco);
 
                 //se manda a crear una carpeta fisica al disco local C para simular la unidad
                 System.IO.Directory.CreateDirectory("c:/ArchivosFAT32/"+nombre_Disco);
@@ -120,18 +121,40 @@ namespace Proyecto_FAT32_Mario_Galindo
 
             //Capturamos el nombre del Archivo
             Archivo_Nombre = mArchivo.Nombre_Archivo;
+            
+            //Creamos instancia de la clase archhivo que nos maneja los datos con la base de datos
+            tablaArchivos tabla_FAT = new tablaArchivos();
 
             if (dr == DialogResult.OK)
             {
-                File.WriteAllText("c:/ArchivosFAT32/"+ nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt", " ");
-                trvDirectorio.SelectedNode.Nodes.Add("📰 " + Archivo_Nombre+".txt");
+                string rutaCreacion = trvDirectorio.SelectedNode.FullPath;
+                
+                //File.WriteAllText("c:/ArchivosFAT32/"+ nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt", " ");
+                File.WriteAllText("c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt", " ");
+
+                trvDirectorio.SelectedNode.Nodes.Add(Archivo_Nombre+".txt");
+
+                //Obtengo la direccion donde se creo
+                string url = "c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt";
+                
 
                 //Obtener Informacion del archivo
-                FileInfo file = new FileInfo("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt");
+                //FileInfo file = new FileInfo("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt");
+                FileInfo file = new FileInfo("c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt");
                 
+                fechaCreacion = DateTime.Now;
+                string date = fechaCreacion.Date.ToString("yyyy-MM-dd");
+
+               
 
                 //Obtenemos el tamano del archivo Creado
                 tamano_ArchivoCreado = (int)file.Length;
+
+                //Mandamos los datos del archivo a la File Allocation Table
+                tabla_FAT.actualizarFAT32(Archivo_Nombre, tamano_ArchivoCreado, date, url, nombre_Disco);
+
+
+                MessageBox.Show(rutaCreacion);
             }
           
 
@@ -192,7 +215,7 @@ namespace Proyecto_FAT32_Mario_Galindo
             if (dr == DialogResult.OK)
             {
                 System.IO.Directory.CreateDirectory("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre);
-                trvDirectorio.SelectedNode.Nodes.Add("📂 "+Carpeta_Nombre);
+                trvDirectorio.SelectedNode.Nodes.Add(Carpeta_Nombre);
             }
         }
     }
