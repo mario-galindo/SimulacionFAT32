@@ -40,10 +40,14 @@ namespace Proyecto_FAT32_Mario_Galindo
 
         //Varibles para el Archivo
         public string Archivo_Nombre;
+        public int tamano_ArchivoCreado;
+        public DateTime fechaCreacion;
+        public string url;
 
         //Varible para la carpeta
         public string Carpeta_Nombre;
 
+        //Creacion del Disco y Asignacion en la Master Boot Table
         private void crearArchivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             modalDisco mDisco = new modalDisco();
@@ -108,6 +112,7 @@ namespace Proyecto_FAT32_Mario_Galindo
             
         }
 
+        //Creacion del Archivo de Texto
         private void crearArchivoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             modalArchivo mArchivo = new modalArchivo();
@@ -120,6 +125,13 @@ namespace Proyecto_FAT32_Mario_Galindo
             {
                 File.WriteAllText("c:/ArchivosFAT32/"+ nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt", " ");
                 trvDirectorio.SelectedNode.Nodes.Add("📰 " + Archivo_Nombre+".txt");
+
+                //Obtener Informacion del archivo
+                FileInfo file = new FileInfo("c:/ArchivosFAT32/" + nombre_Disco + "/" + Carpeta_Nombre + "/" + Archivo_Nombre + ".txt");
+                
+
+                //Obtenemos el tamano del archivo Creado
+                tamano_ArchivoCreado = (int)file.Length;
             }
           
 
