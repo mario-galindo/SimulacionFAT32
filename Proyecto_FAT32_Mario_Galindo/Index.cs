@@ -341,5 +341,49 @@ namespace Proyecto_FAT32_Mario_Galindo
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tablaArchivos ManejoFAT = new tablaArchivos();
+
+            string Ubicacion = trvDirectorio.SelectedNode.FullPath;
+
+            FileInfo file = new FileInfo("c:/ArchivosFAT32/" + Ubicacion);
+
+            int tamano_ArchivoBorrado = (int)file.Length;
+
+            string nombreElemento = trvDirectorio.SelectedNode.Text;
+
+            string[] nueva = nombreElemento.Split('.');
+
+            foreach (var item in nueva)
+            {
+                ManejoFAT.deleteFile(item);
+                break;
+            }
+
+            //Lo removemos del TreeView
+            trvDirectorio.SelectedNode.Remove();
+           
+            //A restar...
+            ManejoFAT.actualizarArchivo(Archivo_Nombre, tamano_ArchivoCreado, date, "c:/ArchivosFAT32/" + Ubicacion, nombre_Disco);
+
+            //Actualizamos el valor real en la Master Boot
+            long usadoActual = ManejoFAT.EspacionDisponible();
+            usadoActual = (usadoActual - tamano_ArchivoCreado);
+
+            //Actualizamos la Tabla
+            ManejoFAT.actualizarUsado(usadoActual, nombre_Disco);
+
+            //Actualizamos nuestra vista
+            lbusado.Text = usadoActual.ToString();
+
+            lbdisponible.Text = Convert.ToString(resultado_Bytes - usadoActual + " bytes");
+
+            lbtamano.Text = "";
+            lbcreacion.Text = "";
+            lblastaccess.Text = "";
+
+        }
     }
 }

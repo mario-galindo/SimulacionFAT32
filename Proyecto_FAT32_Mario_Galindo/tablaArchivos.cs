@@ -66,5 +66,20 @@ namespace Proyecto_FAT32_Mario_Galindo
 
         }
 
+
+        public void deleteFile(string nombre){
+            
+            //Armamos nuestro Query
+            string Query_deleted = "delete from Direcciones where nombreArchivo = '"+nombre+"'";
+
+            //Abrimos nuestra base de datos
+            OpsBD.conectar();
+
+            //Ejecutamos la Query
+            OpsBD.EjecutarSQL(Query_deleted);
+
+            //Cerramos nuestra conexion
+            OpsBD.desconectar();
+        }
     }
 }

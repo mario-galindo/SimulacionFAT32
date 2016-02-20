@@ -36,6 +36,15 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.trvDirectorio = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.button4 = new System.Windows.Forms.Button();
+            this.lblastaccess = new System.Windows.Forms.Label();
+            this.lbcreacion = new System.Windows.Forms.Label();
+            this.lbtamano = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbtotalgb = new System.Windows.Forms.Label();
             this.lbdisponible = new System.Windows.Forms.Label();
@@ -43,8 +52,6 @@
             this.lbPorcentaje = new System.Windows.Forms.Label();
             this.lbMostarEspacio = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.ProgresbarEspacio = new System.Windows.Forms.ProgressBar();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,15 +60,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbtamano = new System.Windows.Forms.Label();
-            this.lbcreacion = new System.Windows.Forms.Label();
-            this.lblastaccess = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ProgresbarEspacio = new System.Windows.Forms.ProgressBar();
+            this.label9 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -100,21 +100,21 @@
             // crearArchivoToolStripMenuItem
             // 
             this.crearArchivoToolStripMenuItem.Name = "crearArchivoToolStripMenuItem";
-            this.crearArchivoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.crearArchivoToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.crearArchivoToolStripMenuItem.Text = "Crear Disco";
             this.crearArchivoToolStripMenuItem.Click += new System.EventHandler(this.crearArchivoToolStripMenuItem_Click);
             // 
             // crearCarpetaToolStripMenuItem
             // 
             this.crearCarpetaToolStripMenuItem.Name = "crearCarpetaToolStripMenuItem";
-            this.crearCarpetaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.crearCarpetaToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.crearCarpetaToolStripMenuItem.Text = "Crear Carpeta";
             this.crearCarpetaToolStripMenuItem.Click += new System.EventHandler(this.crearCarpetaToolStripMenuItem_Click);
             // 
             // crearArchivoToolStripMenuItem1
             // 
             this.crearArchivoToolStripMenuItem1.Name = "crearArchivoToolStripMenuItem1";
-            this.crearArchivoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.crearArchivoToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.crearArchivoToolStripMenuItem1.Text = "Crear Archivo";
             this.crearArchivoToolStripMenuItem1.Click += new System.EventHandler(this.crearArchivoToolStripMenuItem1_Click);
             // 
@@ -169,6 +169,91 @@
             this.splitContainer2.Size = new System.Drawing.Size(765, 620);
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(16, 295);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Guardar Informacion";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // lblastaccess
+            // 
+            this.lblastaccess.AutoSize = true;
+            this.lblastaccess.Location = new System.Drawing.Point(452, 95);
+            this.lblastaccess.Name = "lblastaccess";
+            this.lblastaccess.Size = new System.Drawing.Size(10, 13);
+            this.lblastaccess.TabIndex = 15;
+            this.lblastaccess.Text = ".";
+            // 
+            // lbcreacion
+            // 
+            this.lbcreacion.AutoSize = true;
+            this.lbcreacion.Location = new System.Drawing.Point(452, 74);
+            this.lbcreacion.Name = "lbcreacion";
+            this.lbcreacion.Size = new System.Drawing.Size(10, 13);
+            this.lbcreacion.TabIndex = 14;
+            this.lbcreacion.Text = ".";
+            // 
+            // lbtamano
+            // 
+            this.lbtamano.AutoSize = true;
+            this.lbtamano.Location = new System.Drawing.Point(452, 56);
+            this.lbtamano.Name = "lbtamano";
+            this.lbtamano.Size = new System.Drawing.Size(10, 13);
+            this.lbtamano.TabIndex = 13;
+            this.lbtamano.Text = ".";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(450, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(257, 24);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Informacion del Archivo";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(16, 61);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(237, 228);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = "";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(178, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Borrar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(97, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Abrir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Comprimir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -245,22 +330,6 @@
             this.label12.Size = new System.Drawing.Size(75, 13);
             this.label12.TabIndex = 10;
             this.label12.Text = "Total Espacio:";
-            // 
-            // ProgresbarEspacio
-            // 
-            this.ProgresbarEspacio.Location = new System.Drawing.Point(120, 185);
-            this.ProgresbarEspacio.Name = "ProgresbarEspacio";
-            this.ProgresbarEspacio.Size = new System.Drawing.Size(238, 23);
-            this.ProgresbarEspacio.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 191);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(61, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Capacidad:";
             // 
             // label8
             // 
@@ -340,89 +409,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tipo: Disco local";
             // 
-            // button1
+            // ProgresbarEspacio
             // 
-            this.button1.Location = new System.Drawing.Point(16, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Comprimir";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ProgresbarEspacio.Location = new System.Drawing.Point(120, 185);
+            this.ProgresbarEspacio.Name = "ProgresbarEspacio";
+            this.ProgresbarEspacio.Size = new System.Drawing.Size(238, 23);
+            this.ProgresbarEspacio.TabIndex = 9;
             // 
-            // button2
+            // label9
             // 
-            this.button2.Location = new System.Drawing.Point(97, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Abrir";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(178, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Borrar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(16, 61);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(237, 228);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(450, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(257, 24);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Informacion del Archivo";
-            // 
-            // lbtamano
-            // 
-            this.lbtamano.AutoSize = true;
-            this.lbtamano.Location = new System.Drawing.Point(452, 56);
-            this.lbtamano.Name = "lbtamano";
-            this.lbtamano.Size = new System.Drawing.Size(10, 13);
-            this.lbtamano.TabIndex = 13;
-            this.lbtamano.Text = ".";
-            // 
-            // lbcreacion
-            // 
-            this.lbcreacion.AutoSize = true;
-            this.lbcreacion.Location = new System.Drawing.Point(452, 74);
-            this.lbcreacion.Name = "lbcreacion";
-            this.lbcreacion.Size = new System.Drawing.Size(10, 13);
-            this.lbcreacion.TabIndex = 14;
-            this.lbcreacion.Text = ".";
-            // 
-            // lblastaccess
-            // 
-            this.lblastaccess.AutoSize = true;
-            this.lblastaccess.Location = new System.Drawing.Point(452, 95);
-            this.lblastaccess.Name = "lblastaccess";
-            this.lblastaccess.Size = new System.Drawing.Size(10, 13);
-            this.lblastaccess.TabIndex = 15;
-            this.lblastaccess.Text = ".";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(16, 295);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(125, 23);
-            this.button4.TabIndex = 16;
-            this.button4.Text = "Guardar Informacion";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(24, 191);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Capacidad:";
             // 
             // Index
             // 
@@ -469,8 +470,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ProgressBar ProgresbarEspacio;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TreeView trvDirectorio;
         private System.Windows.Forms.Label lbMostarEspacio;
@@ -489,6 +488,8 @@
         private System.Windows.Forms.Label lbcreacion;
         private System.Windows.Forms.Label lblastaccess;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ProgressBar ProgresbarEspacio;
+        private System.Windows.Forms.Label label9;
     }
 }
 
