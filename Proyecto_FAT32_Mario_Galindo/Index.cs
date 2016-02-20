@@ -114,6 +114,8 @@ namespace Proyecto_FAT32_Mario_Galindo
 
         }
 
+        public string date;
+
         //Creacion del Archivo de Texto
         private void crearArchivoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -144,7 +146,7 @@ namespace Proyecto_FAT32_Mario_Galindo
                 FileInfo file = new FileInfo("c:/ArchivosFAT32/" + rutaCreacion + "/" + Archivo_Nombre + ".txt");
 
                 fechaCreacion = DateTime.Now;
-                string date = fechaCreacion.Date.ToString("yyyy-MM-dd");
+                date = fechaCreacion.Date.ToString("yyyy-MM-dd");
 
 
 
@@ -164,6 +166,11 @@ namespace Proyecto_FAT32_Mario_Galindo
 
                 //Actualizamos la Tabla
                 tabla_FAT.actualizarUsado(usadoActual, nombre_Disco);
+
+                //Actualizamos nuestra vista
+                lbusado.Text = usadoActual.ToString();
+
+                lbdisponible.Text = Convert.ToString(resultado_Bytes - usadoActual + " bytes");
 
 
                 MessageBox.Show(rutaCreacion);
@@ -291,6 +298,47 @@ namespace Proyecto_FAT32_Mario_Galindo
         {
             string Ubicacion = trvDirectorio.SelectedNode.FullPath;
             richTextBox1.SaveFile("c:/ArchivosFAT32/"+Ubicacion, RichTextBoxStreamType.PlainText);
+
+            //Creamos instancia de la clase archhivo que nos maneja los datos con la base de datos
+            tablaArchivos tabla_FAT = new tablaArchivos();
+
+           
+
+            //Obtener Informacion del archivo para actualizar el valor
+            FileInfo file = new FileInfo("c:/ArchivosFAT32/" + Ubicacion);
+
+            
+            //Obtenemos el tamano del archivo Creado
+            tamano_ArchivoCreado = (int)file.Length;
+
+            
+            
+            //Mandamos los datos del archivo a la File Allocation Table
+            tabla_FAT.actualizarArchivo(Archivo_Nombre, tamano_ArchivoCreado, date, "c:/ArchivosFAT32/" + Ubicacion, nombre_Disco);
+
+
+
+            //Actualizamos el valor real en la Master Boot
+            long usadoActual = tabla_FAT.EspacionDisponible();
+            usadoActual = (usadoActual + tamano_ArchivoCreado);
+
+
+
+            //Actualizamos la Tabla
+            tabla_FAT.actualizarUsado(usadoActual, nombre_Disco);
+
+            //Actualizamos nuestra vista
+            lbusado.Text = usadoActual.ToString();
+
+            lbdisponible.Text = Convert.ToString(resultado_Bytes - usadoActual + " bytes");
+
+
+
+            
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
 
         }
     }
