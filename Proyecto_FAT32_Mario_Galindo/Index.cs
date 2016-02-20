@@ -153,7 +153,18 @@ namespace Proyecto_FAT32_Mario_Galindo
                 //Mandamos los datos del archivo a la File Allocation Table
                 tabla_FAT.actualizarFAT32(Archivo_Nombre, tamano_ArchivoCreado, date, url, nombre_Disco);
 
+                
+                
+                //Actualizamos el valor real en la Master Boot
+                long usadoActual = tabla_FAT.EspacionDisponible();
+                usadoActual = (usadoActual + 1);
 
+               
+
+                //Actualizamos la Tabla
+                tabla_FAT.actualizarUsado(usadoActual, nombre_Disco);
+                
+                
                 MessageBox.Show(rutaCreacion);
             }
           

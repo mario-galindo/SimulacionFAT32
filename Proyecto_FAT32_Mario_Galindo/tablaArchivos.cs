@@ -29,5 +29,25 @@ namespace Proyecto_FAT32_Mario_Galindo
 
         }
 
+
+        public long EspacionDisponible() {
+
+            string Query_espacio = "select p.usado from Particion p";
+
+            return OpsBD.EjecutarSQLEscalar(Query_espacio);
+        }
+
+
+        public void actualizarUsado(long nuevo,string particion) {
+
+            string Query_Actualizar = "update Particion set usado = " + nuevo + " where nombre = '" + particion + "' ";
+
+            OpsBD.conectar();
+
+            OpsBD.EjecutarSQL(Query_Actualizar);
+
+            OpsBD.desconectar();
+        }
+
     }
 }

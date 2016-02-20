@@ -41,13 +41,13 @@ namespace Proyecto_FAT32_Mario_Galindo
 
 
         //Consulta que nos retorna un escalar
-        public int EjecutarSQLEscalar(String Query)
+        public long EjecutarSQLEscalar(String Query)
         {
             this.conectar();
             SqlCommand MiComando = new SqlCommand(Query, this.MiConexion);
             //Ejecutamos la consulta sql
-            int count = Convert.ToInt32(MiComando.ExecuteScalar());
-            return count;
+            return Convert.ToInt64(MiComando.ExecuteScalar()); 
+            
 
         }
 
