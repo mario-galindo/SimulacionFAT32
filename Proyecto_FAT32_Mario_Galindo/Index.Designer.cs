@@ -36,13 +36,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.trvDirectorio = new System.Windows.Forms.TreeView();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtnodo = new System.Windows.Forms.TextBox();
-            this.txtarc = new System.Windows.Forms.TextBox();
-            this.txt1 = new System.Windows.Forms.TextBox();
-            this.btnFile = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbtotalgb = new System.Windows.Forms.Label();
             this.lbdisponible = new System.Windows.Forms.Label();
@@ -61,6 +54,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbtamano = new System.Windows.Forms.Label();
+            this.lbcreacion = new System.Windows.Forms.Label();
+            this.lblastaccess = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -152,14 +153,15 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.button1);
-            this.splitContainer2.Panel1.Controls.Add(this.label11);
+            this.splitContainer2.Panel1.Controls.Add(this.button4);
+            this.splitContainer2.Panel1.Controls.Add(this.lblastaccess);
+            this.splitContainer2.Panel1.Controls.Add(this.lbcreacion);
+            this.splitContainer2.Panel1.Controls.Add(this.lbtamano);
             this.splitContainer2.Panel1.Controls.Add(this.label10);
-            this.splitContainer2.Panel1.Controls.Add(this.txtnodo);
-            this.splitContainer2.Panel1.Controls.Add(this.txtarc);
-            this.splitContainer2.Panel1.Controls.Add(this.txt1);
-            this.splitContainer2.Panel1.Controls.Add(this.btnFile);
-            this.splitContainer2.Panel1.Controls.Add(this.btnAdd);
+            this.splitContainer2.Panel1.Controls.Add(this.richTextBox1);
+            this.splitContainer2.Panel1.Controls.Add(this.button3);
+            this.splitContainer2.Panel1.Controls.Add(this.button2);
+            this.splitContainer2.Panel1.Controls.Add(this.button1);
             // 
             // splitContainer2.Panel2
             // 
@@ -167,65 +169,6 @@
             this.splitContainer2.Size = new System.Drawing.Size(765, 620);
             this.splitContainer2.SplitterDistance = 350;
             this.splitContainer2.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(217, 63);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 13);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Disco Agregar";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 63);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 13);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Nombre Archivo";
-            // 
-            // txtnodo
-            // 
-            this.txtnodo.Location = new System.Drawing.Point(217, 79);
-            this.txtnodo.Name = "txtnodo";
-            this.txtnodo.Size = new System.Drawing.Size(100, 20);
-            this.txtnodo.TabIndex = 4;
-            // 
-            // txtarc
-            // 
-            this.txtarc.Location = new System.Drawing.Point(28, 79);
-            this.txtarc.Name = "txtarc";
-            this.txtarc.Size = new System.Drawing.Size(100, 20);
-            this.txtarc.TabIndex = 3;
-            // 
-            // txt1
-            // 
-            this.txt1.Location = new System.Drawing.Point(28, 29);
-            this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(100, 20);
-            this.txt1.TabIndex = 2;
-            // 
-            // btnFile
-            // 
-            this.btnFile.Location = new System.Drawing.Point(136, 76);
-            this.btnFile.Name = "btnFile";
-            this.btnFile.Size = new System.Drawing.Size(75, 23);
-            this.btnFile.TabIndex = 1;
-            this.btnFile.Text = "Add File";
-            this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(136, 26);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add Drive";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox1
             // 
@@ -398,13 +341,87 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 123);
+            this.button1.Location = new System.Drawing.Point(16, 15);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
             this.button1.Text = "Comprimir";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(97, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Abrir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(178, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Borrar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(16, 61);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(237, 228);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = "";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(450, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(257, 24);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Informacion del Archivo";
+            // 
+            // lbtamano
+            // 
+            this.lbtamano.AutoSize = true;
+            this.lbtamano.Location = new System.Drawing.Point(452, 56);
+            this.lbtamano.Name = "lbtamano";
+            this.lbtamano.Size = new System.Drawing.Size(10, 13);
+            this.lbtamano.TabIndex = 13;
+            this.lbtamano.Text = ".";
+            // 
+            // lbcreacion
+            // 
+            this.lbcreacion.AutoSize = true;
+            this.lbcreacion.Location = new System.Drawing.Point(452, 74);
+            this.lbcreacion.Name = "lbcreacion";
+            this.lbcreacion.Size = new System.Drawing.Size(10, 13);
+            this.lbcreacion.TabIndex = 14;
+            this.lbcreacion.Text = ".";
+            // 
+            // lblastaccess
+            // 
+            this.lblastaccess.AutoSize = true;
+            this.lblastaccess.Location = new System.Drawing.Point(452, 95);
+            this.lblastaccess.Name = "lblastaccess";
+            this.lblastaccess.Size = new System.Drawing.Size(10, 13);
+            this.lblastaccess.TabIndex = 15;
+            this.lblastaccess.Text = ".";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(16, 295);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 23);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Guardar Informacion";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // Index
             // 
@@ -454,14 +471,7 @@
         private System.Windows.Forms.ProgressBar ProgresbarEspacio;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtnodo;
-        private System.Windows.Forms.TextBox txtarc;
-        private System.Windows.Forms.Button btnFile;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TreeView trvDirectorio;
-        public System.Windows.Forms.TextBox txt1;
         private System.Windows.Forms.Label lbMostarEspacio;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbPorcentaje;
@@ -470,6 +480,14 @@
         private System.Windows.Forms.Label lbdisponible;
         private System.Windows.Forms.Label lbtotalgb;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label lbtamano;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbcreacion;
+        private System.Windows.Forms.Label lblastaccess;
+        private System.Windows.Forms.Button button4;
     }
 }
 

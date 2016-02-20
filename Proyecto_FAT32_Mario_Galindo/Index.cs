@@ -194,24 +194,12 @@ namespace Proyecto_FAT32_Mario_Galindo
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            trvDirectorio.Nodes.Add(txt1.Text);
+           
         }
 
         private void btnFile_Click(object sender, EventArgs e)
         {
-            int indexItem;
-            foreach (TreeNode n in trvDirectorio.Nodes)
-            {
-
-
-                if (n.Text.ToLower() == txtnodo.Text)
-                {
-                    indexItem = n.Index;
-                    trvDirectorio.Nodes[indexItem].Nodes.Add(txtarc.Text);
-
-                }
-
-            }
+           
 
 
 
@@ -277,6 +265,33 @@ namespace Proyecto_FAT32_Mario_Galindo
                     }
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+
+            string Ubicacion = trvDirectorio.SelectedNode.FullPath;
+
+            FileStream strean = new FileStream("c:/ArchivosFAT32/" + Ubicacion, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(strean);
+            while (reader.Peek() != -1)
+            {
+                richTextBox1.Text += reader.ReadLine() + "\r";
+            }
+            reader.Close();
+
+            FileInfo file = new FileInfo("c:/ArchivosFAT32/" + Ubicacion);
+            lbtamano.Text = Convert.ToString(file.Length) + " bytes";
+            lbcreacion.Text = Convert.ToString(file.CreationTime);
+            lblastaccess.Text = Convert.ToString(file.LastAccessTime);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string Ubicacion = trvDirectorio.SelectedNode.FullPath;
+            richTextBox1.SaveFile("c:/ArchivosFAT32/"+Ubicacion, RichTextBoxStreamType.PlainText);
+
         }
     }
 }
